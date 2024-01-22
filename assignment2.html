@@ -1,0 +1,68 @@
+<!-- Prakhar_Chandrakar, Assignment2-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prakhars_Assignment_2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      #main {
+        display: flex;
+      }
+      button {
+        margin: 5px;
+        padding: 5px;
+        /* border: "1px solid black";*/
+        border-radius: 5px;
+      }
+      button.clicked {
+        background-color: blueviolet;
+        color: white;
+        border-color: blueviolet;
+      }
+      button:hover:not(:active) {
+        border-color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="main">
+        <button id="html_btn" onclick="HtmlBtn()">HTML</button>
+        <button id="css_btn" onclick="CssBtn()">CSS</button>
+        <button id="js_btn" onclick="JsBtn()">JavaScript</button>
+      </div>
+      <p id="output_text"></p>
+    </div>
+    <script>
+      function HtmlBtn() {
+        let text =
+          "The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser.";
+        document.getElementById("output_text").innerText = text;
+        resetButtons();
+        document.getElementById("html_btn").classList.add("clicked");
+      }
+      function CssBtn() {
+        let text =
+          "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.";
+        document.getElementById("output_text").innerText = text;
+        resetButtons();
+        document.getElementById("css_btn").classList.add("clicked");
+      }
+      function JsBtn() {
+        let text =
+          "JavaScript, often abbreviated as JS, is a programming language that is one  of the core technologies of the World Wide Web, alongside HTML and CSS.";
+        document.getElementById("output_text").innerText = text;
+        resetButtons();
+        document.getElementById("js_btn").classList.add("clicked");
+      }
+      function resetButtons() {
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((btn) => btn.classList.remove("clicked"));
+      }
+    </script>
+  </body>
+</html>
